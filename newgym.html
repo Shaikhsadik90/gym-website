@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sam Gym</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <link rel="icon" href="gym.jpeg" type="image/x-icon">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+
+
+
+    <style>
+        /* Styling for h3 */
+        #typed-output {
+            font-size: 3.5rem;
+            /* Larger font size */
+            font-weight: 600;
+            /* Bold text */
+            color: white;
+            text-align: center;
+            overflow: hidden;
+            /* Hides the text until it is typed */
+            border-right: 0.15em solid white;
+            /* Creates the "cursor" effect */
+            white-space: nowrap;
+            opacity: 0;
+            /* Start hidden */
+            animation: typing 4s steps(40) 1s 1 normal both, bounceIn 1s ease-out 4s forwards, fadeIn 2s ease-out infinite, blink 0.75s step-end infinite;
+            /* Typing, Bounce, Continuous Fade-In */
+        }
+
+        /* Typing effect animation */
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        /* Bounce effect animation */
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0) rotate(-120deg);
+                /* Start small and rotated */
+                opacity: 0;
+            }
+
+            60% {
+                transform: scale(1.2) rotate(20deg);
+                /* Grow larger and rotate */
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1) rotate(0);
+                /* End in normal position */
+                opacity: 1;
+            }
+        }
+
+        /* Continuous Fading effect */
+        @keyframes fadeIn {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+                /* Fade to 50% opacity */
+            }
+
+            100% {
+                opacity: 1;
+                /* Fade back to full opacity */
+            }
+        }
+
+        /* Blinking cursor effect */
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+
+
+
+
+
+
+        /* Blinking cursor effect */
+
+
+
+
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            /* Full screen height */
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Ensures the video covers the entire section */
+            z-index: -1;
+            /* Places the video behind the content */
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+        }
+
+        /* Video Section */
+        .video-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px;
+            background-color: #ffffff;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin: 50px 0;
+            border-radius: 8px;
+        }
+
+        /* Video Container */
+        .video-container {
+            flex: 0 0 40%;
+            /* Video takes 40% of the width */
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Content */
+        .content {
+            flex: 0 0 55%;
+            /* Content takes 55% of the width */
+            padding-left: 30px;
+            text-align: left;
+        }
+
+        .content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #555;
+            max-width: 500px;
+        }
+
+        .cta-button {
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            background-color: #ff5722;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #ff3d00;
+            transform: translateY(-5px);
+            /* Lift effect */
+        }
+
+
+
+
+
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #333;
+            padding: 20px 0;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Logo Styling */
+        .logo h1 {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo h1 i {
+            margin-right: 10px;
+            color: #e74c3c;
+            /* Logo color */
+        }
+
+        /* Navigation Styling */
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: uppercase;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Hover Effect for Links */
+        nav ul li a:hover {
+            color: #e74c3c;
+            transform: scale(1.1);
+        }
+
+        /* Active Link Styling */
+        nav ul li a.active {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        /* Mobile responsiveness */
+        @media screen and (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .logo h1 {
+                font-size: 28px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+                padding-top: 20px;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        h2 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #622c2c;
+            text-align: center;
+            display: inline-block;
+            position: relative;
+            opacity: 0;
+            /* Start with text hidden */
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+
+            50% {
+                transform: translateY(-20px);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+
+        /* Optional: Basic styling */
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Contact Section Styles */
+        .contact-section {
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .contact-section p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form label {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .btn-submit {
+            background-color: #007BFF;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+
+
+
+        /* Reset and Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f7f7f7;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin: 0;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 20px 40px;
+            color: white;
+        }
+
+        header .logo h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-size: 1.1rem;
+            padding: 8px 16px;
+            border-radius: 25px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #e87469;
+            transform: scale(1.1);
+        }
+
+        .hero {
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            padding: 0 20px;
+        }
+
+        /* Hero Section 
+        
+
+
+        /* Other sections like Services, Pricing, Testimonials, etc. can be added below */
+
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            padding: 15px 40px;
+            background-color: #ff6f61;
+            color: white;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #ff3f32;
+            transform: scale(1.05);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 60px 20px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        .service {
+            display: inline-block;
+            background: #f1f1f1;
+            padding: 40px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            margin: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .service i {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: #ff6f61;
+        }
+
+        .service h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .service p {
+            font-size: 1rem;
+            color: #777;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background: #f1f1f1;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .pricing h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        .price-plan {
+            background: #fff;
+            padding: 40px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            width: 280px;
+        }
+
+        .price-plan h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .price-plan p {
+            font-size: 1.5rem;
+            color: #ff6f61;
+            margin-bottom: 20px;
+        }
+
+        .price-plan ul {
+            list-style: none;
+            margin-bottom: 20px;
+            padding-left: 0;
+        }
+
+        .price-plan ul li {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .price-plan .cta-button {
+            background-color: #ff6f61;
+            padding: 12px 35px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        .testimonial {
+            background: #f1f1f1;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            width: 300px;
+            margin: 20px;
+        }
+
+        .testimonial p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .testimonial h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .testimonial span {
+            font-size: 1rem;
+            color: #777;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        /* General Button Styles */
+        .cta-button,
+        .btn-login {
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* 'Get Started' Button Style */
+        .cta-button {
+            background-color: #007BFF;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* 'Login' Button Style */
+        .btn-login {
+            background-color: #28a745;
+            color: white;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+
+        .btn-login:hover {
+            background-color: #218838;
+            font-size: 19px;
+
+        }
+
+        /* Icon Styling */
+        .icon {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+            object-fit: contain;
+        }
+
+
+        .social-icons a {
+            margin-right: 15px;
+            font-size: 24px;
+            color: #5f8a71;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #007bff;
+            /* Change this to your preferred color */
+        }
+
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        footer .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        /* Left section */
+        .footer-left, .footer-right {
+            flex: 1;
+        }
+
+        .footer-left h3, .footer-right h3 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .footer-left p, .footer-right p {
+            font-size: 1em;
+            margin: 5px 0;
+        }
+
+        /* Social Icons Styling */
+        .social-icons a {
+            margin-right: 20px;
+            font-size: 30px;
+            color: #fff;
+            transition: color 0.3s ease;
+        }
+
+        /* Hover effect for social media icons */
+        .social-icons a:hover {
+            color: #3498db;
+        }
+
+        /* Links Styling */
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 5px 0;
+            display: block;
+            font-size: 1em;
+            transition: color 0.3s ease;
+        }
+
+        /* Hover effect for links */
+        .footer-links a:hover {
+            color: #3498db;
+        }
+
+        /* Small screen adjustment */
+        @media screen and (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1> <img src="gym.jpeg" alt="" width="50px" height="50px">> Sam Gym</h1>
+        </div>
+        <!-- Navigation -->
+        <nav>
+            <ul>
+                <li><a href="lernmore.html" class="active">Home</a></li>
+                <li><a href="#services"><i class="fas fa-cogs"></i> Services</a></li>
+                <li><a href="#pricing"><i class="fas fa-tag"></i> Pricing</a></li>
+                <li><a href="#testimonials"><i class="fas fa-comment-dots"></i> Testimonials</a></li>
+                <li><a href="#contact"><i class="fas fa-phone-alt"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home" class="hero">
+        <!-- Background Video -->
+        <video autoplay loop muted playsinline class="hero-video">
+            <source src="videogym.mp4" type="video/mp4">
+            <source src="gym.mp4" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="hero-content">
+
+            <h3 id="typed-output">TRANSFORM YOUR BODY INTO FITNESS</h3>
+
+            <p>Join us today and start your fitness journey.</p>
+            <a href="gymservice.html" class="cta-button">Get Started</a>
+
+            <a href="logingym.html" class="btn-login">
+                <i class="fas fa-sign-in-alt"></i> Login
+            </a>
+        </div>
+    </section>
+
+
+
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service">
+            <i class="fas fa-dumbbell"></i>
+            <h3>Personal Training</h3>
+            <p>One-on-one sessions with our expert trainers.</p>
+        </div>
+        <div class="service">
+            <i class="fas fa-running"></i>
+            <h3>Group Classes</h3>
+            <p>Fun and energizing group workouts.</p>
+        </div>
+        <div class="service">
+            <i class="fas fa-heartbeat"></i>
+            <h3>Health & Wellness</h3>
+            <p>Nutrition, recovery, and overall wellness guidance.</p>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+        <h2>Pricing Plans</h2>
+        <div class="price-plan">
+            <h3>Basic</h3>
+            <p>$19/month</p>
+            <ul>
+                <li>Access to Gym</li>
+                <li>Weekly Classes</li>
+                <li>Basic Support</li>
+            </ul>
+            <a href="signupgym.html" class="cta-button">Sign Up</a>
+        </div>
+        <div class="price-plan">
+            <h3>Premium</h3>
+            <p>$39/month</p>
+            <ul>
+                <li>All Gym Access</li>
+                <li>Unlimited Classes</li>
+                <li>Personal Trainer</li>
+                <li>Health Coaching</li>
+            </ul>
+            <a href="signupgym.html" class="cta-button">Sign Up</a>
+        </div>
+        <div class="price-plan">
+            <h3>Ultimate</h3>
+            <p>$59/month</p>
+            <ul>
+                <li>Everything in Premium</li>
+                <li>24/7 Access</li>
+                <li>Exclusive Workshops</li>
+                <li>Priority Support</li>
+            </ul>
+            <a href="signupgym.html" class="cta-button">Sign Up</a>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <h2>What Our Members Say</h2>
+        <div class="testimonial">
+            <p>"The best gym experience I’ve had! Personal trainers are so helpful and motivating!"</p>
+            <h3>John Doe</h3>
+            <span>Personal Training Member</span>
+        </div>
+        <div class="testimonial">
+            <p>"I love the group classes. The energy is contagious, and I’ve seen amazing results."</p>
+            <h3>Jane Smith</h3>
+            <span>Group Class Member</span>
+        </div>
+    </section>
+
+    <section class="video-section">
+        <div class="video-container">
+            <!-- Replace with a working YouTube video link -->
+            <iframe class="video-frame" src="gym.mp4" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+        <div class="content">
+            <h2>Watch Our Latest Gym Workout</h2>
+            <p>Get motivated and crush your fitness goals with our top workout tips!</p>
+            <a href="https://youtube.com/shorts/mAKB8ZIi0Vk?si=omWUnGvjgtK-skWL" class="cta-button"
+                target="_blank">Watch Now</a>
+        </div>
+    </section>
+
+
+
+    <section id="contact" class="contact-section">
+        <div class="contact-content">
+            <h2>Contact Us</h2>
+            <p>If you have any questions, feel free to reach out. We're here to help you on your fitness journey!</p>
+
+
+            <!-- Contact Form -->
+            <form action="submit-form.php" method="POST" class="contact-form">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
+
+                <button type="submit" class="btn-submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+
+
+
+
+    <footer id="contact">
+        <div class="footer-container">
+            <!-- Left Section: Contact Information -->
+            <div class="footer-left">
+                <h3>Sam Gym</h3>
+                <p>&copy; 2025 Sam Gym. All rights reserved.</p>
+                <p>Contact us at <a href="mailto:info@mygym.com" style="color: #fff; text-decoration: underline;">info@mygym.com</a></p>
+            </div>
+
+            <!-- Center Section: Quick Links -->
+            <div class="footer-center">
+                <h3>Quick Links</h3>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="newabt.html">About Us</a>
+                    <a href="#services">Services</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+
+            <!-- Right Section: Social Media Links -->
+            <div class="footer-right">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com" target="_blank" title="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path d="M8 1c1.858 0 3.644.582 5.003 1.562a6.833 6.833 0 0 1 2.458 2.458C15.418 4.356 16 6.142 16 8s-.582 3.644-1.562 5.003a6.833 6.833 0 0 1-2.458 2.458C11.644 14.418 9.858 16 8 16c-1.858 0-3.644-.582-5.003-1.562a6.833 6.833 0 0 1-2.458-2.458C.582 11.644 0 9.858 0 8s.582-3.644 1.562-5.003a6.833 6.833 0 0 1 2.458-2.458C4.356 1.582 6.142 1 8 1zM8 2C6.356 2 4.818 2.271 3.469 2.789a5.352 5.352 0 0 0-1.904 1.904C2.271 4.818 2 6.356 2 8s.271 3.182.789 4.531a5.352 5.352 0 0 0 1.904 1.904C4.818 13.729 6.356 14 8 14c1.644 0 3.182-.271 4.531-.789a5.352 5.352 0 0 0 1.904-1.904C13.729 11.182 14 9.644 14 8s-.271-3.182-.789-4.531a5.352 5.352 0 0 0-1.904-1.904C11.182 2.271 9.644 2 8 2zM8 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm2 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                        </svg>
+                    </a>
+
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com" target="_blank" title="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                            <path d="M8 0a8 8 0 1 0 8 8 8 8 0 0 0-8-8zM8 1a7 7 0 1 1-7 7 7 7 0 0 1 7-7z"/>
+                            <path d="M8 4a4 4 0 0 1 4 4c0 1.61-.94 3-2 3h-1v2h-2V9H6V7h2V6c0-2.2 1.5-4 4-4h1V2h-1a2 2 0 0 0-2 2v1h-1v2h1l-.5 2H9v3h5c1.06 0 2-1.34 2-3a4 4 0 0 0-4-4z"/>
+                        </svg>
+                    </a>
+
+                    <!-- Twitter -->
+                    <a href="https://www.twitter.com" target="_blank" title="Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                            <path d="M5.026 15c6.035 0 9.345-5.002 9.345-9.33 0-.14 0-.28-.01-.42A6.685 6.685 0 0 0 16 4.426a6.59 6.59 0 0 1-1.889.518A3.292 3.292 0 0 0 15.558 3a6.564 6.564 0 0 1-2.085.8A3.28 3.28 0 0 0 11.14 2c-1.794 0-3.25 1.454-3.25 3.25 0 .255.03.504.085.743C4.35 5.966 2.33 4.6 1.013 2.78a3.251 3.251 0 0 0-.44 1.633c0 1.129.574 2.13 1.444 2.717a3.277 3.277 0 0 1-1.472-.405v.041c0 1.571 1.115 2.887 2.6 3.182-.273.074-.562.114-.86.114-.21 0-.413-.021-.613-.062.413 1.291 1.612 2.23 3.04 2.257A6.585 6.585 0 0 1 0 13.29a9.314 9.314 0 0 0 5.026 1.47z"/>
+                        </svg>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com" target="_blank" title="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                            <path d="M1 0h14c.553 0 1 .447 1 1v14c0 .553-.447 1-1 1H1c-.553 0-1-.447-1-1V1c0-.553.447-1 1-1zm13 14V2H2v12h12z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+    <script src="https://kit.fontawesome.com/a076d05399.js">
+
+
+        var typed = new Typed('#typed-output', {
+            strings: ['TRANSFORM YOUR BODY INTO FITNESS'],
+
+            typeSpeed: 100,  // Speed of typing effect
+            backSpeed: 50,  // Speed of deleting effect
+            backDelay: 1000, // Delay before text is deleted
+            startDelay: 500, // Delay before typing starts
+            loop: true  // Loop the typing effect
+
+        });
+        // Smooth Scroll Effect
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+
+
+                });
+            });
+
+        });
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

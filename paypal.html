@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Payment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="gym.jpeg" type="image/x-icon">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        .payment-section {
+            display: flex;
+            flex-direction: column;
+            /* Stacks buttons vertically */
+            gap: 15px;
+            /* Adds space between the buttons */
+            align-items: center;
+            /* Centers buttons horizontally */
+        }
+
+        .payment-button,
+        .back-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .payment-button {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .payment-button:hover {
+            background-color: #45a049;
+        }
+
+        .back-btn {
+            background-color: #FF5733;
+            color: white;
+        }
+
+        .back-btn:hover {
+            background-color: #e04e2f;
+            transform: scale(1.1);
+        }
+
+        /* Animation */
+        .back-btn i {
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .back-btn:hover i {
+            transform: rotate(180deg);
+        }
+
+
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f6f7fb;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Payment Button */
+        .payment-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .payment-button {
+            background-color: #00457C;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+
+        }
+
+        .payment-button:hover {
+            background-color: #ffcc00;
+            transform: scale(1.05);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Black background with opacity */
+            animation: fadeIn 0.3s ease-out;
+            /* Modal fade-in animation */
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 30px;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            animation: zoomIn 0.5s ease-out;
+            /* Modal zoom-in animation */
+        }
+
+        /* Close Button */
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Form Styles */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        input {
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #00457C;
+        }
+
+        .submit-btn {
+            background-color: #00457C;
+            color: white;
+            padding: 12px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #ffcc00;
+        }
+
+        /* Animation for Modal */
+        @keyframes fadeIn {
+            from {
+                opacity: 0; 
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Payment Button -->
+    <div class="payment-section">
+        <button class="payment-button" id="paymentBtn">Pay Now</button>
+        <button class="back-btn" onclick="window.location.href='payment.html'">
+            <i class="fas fa-home"></i> Back to Home
+        </button>
+    </div>
+
+    <!-- Payment Modal (Hidden Initially) -->
+    <div class="modal" id="paymentModal">
+        <div class="modal-content">
+            <span class="close" id="closeBtn">&times;</span>
+            <h2>Secure Payment</h2>
+            <p>Please enter your payment details to complete the payment.</p>
+            <form id="paymentForm">
+                <label for="cardNumber">Card Number</label>
+                <input type="text" id="cardNumber" name="cardNumber" placeholder="XXXX-XXXX-XXXX-XXXX" required>
+
+                <label for="expiryDate">Expiry Date</label>
+                <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="XXX" required>
+
+                <button type="submit" class="submit-btn">Pay Now</button>
+                <button class="back-btn" onclick="window.location.href='payment.html'">
+                    <i class="fas fa-home"></i> Back to Home
+                </button>
+
+            </form>
+        </div>
+    </div>
+
+    <script>
+
+
+        // Get modal and buttons
+        var modal = document.getElementById("paymentModal");
+        var paymentBtn = document.getElementById("paymentBtn");
+        var closeBtn = document.getElementById("closeBtn");
+
+        // When the user clicks the payment button, open the modal
+        paymentBtn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks the close button (X), close the modal
+        closeBtn.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Handle form submission (for demonstration purposes, no actual payment)
+        document.getElementById('paymentForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form from submitting normally
+            alert('Payment Successful!'); // You can replace this with actual payment logic
+
+            window.location.href = "tnkgym.html"; // Replace 'thank-you.html' with your actual Thank You page URL
+
+            modal.style.display = "none"; // Close the modal after submission
+        });
+
+    </script>
+</body>
+
+</html>

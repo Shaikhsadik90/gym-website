@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Gym Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="gym.jpeg" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #000810;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-size: 24px;
+            color: #fff;
+            font-weight: bold;
+            flex: 1;
+
+            /* Aligns logo to the left */
+        }
+
+        header nav {
+            flex: 1;
+            /* Makes sure the navbar aligns to the right */
+            text-align: right;
+        }
+
+        header nav ul {
+            display: inline-flex;
+            gap: 20px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #f39c12;
+        }
+
+        /* About Section */
+        .about-section {
+            background-color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-header h1 {
+            font-size: 3.5rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-align: left;
+            /* Aligns the h1 to the left */
+        }
+
+        .about-header p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin-bottom: 40px;
+        }
+
+        .about-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .about-content .text {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .about-content .text h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .about-content .text p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+
+        .about-content .cta-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #f39c12;
+            color: #fff;
+            font-size: 1rem;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .about-content .cta-btn:hover {
+            background-color: #e67e22;
+        }
+
+        .about-content .image img {
+            width: 100%;
+            max-width: 550px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: #ecf0f1;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 40px;
+        }
+
+        .testimonial-cards {
+            display: flex;
+            justify-content: space-around;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .testimonial-cards .card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-cards .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .testimonial-cards .card p {
+            font-size: 1rem;
+            color: #7f8c8d;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-cards .card span {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #000a13;
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="gym.jpeg" alt="" width="50px" height="50px" gap="2px">
+
+        <div class="logo">Sam Gym</div>
+        <nav>
+            <ul>
+                <li><a href="newgym.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="gymabt.html"><i class="fas fa-dumbbell"></i> Classes</a></li>
+                <li><a href="newgym.html"><i class="fas fa-id-card"></i> Membership</a></li>
+                <li><a href="lernmore.html"><i class="fas fa-phone-alt"></i> Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="about-header">
+                <h1>Welcome to Our Gym</h1>
+                <p>We help you unlock your full fitness potential with expert training and premium equipment.</p>
+            </div>
+
+            <div class="about-content">
+                <div class="text">
+                    <h2>About Us</h2>
+                    <p>Our gym is dedicated to offering a supportive community and a space where you can achieve your
+                        fitness goals, whether you're a beginner or an experienced athlete.</p>
+                    <p>We focus on personalized workout plans, experienced trainers, and cutting-edge fitness equipment
+                        to help you get the most out of every session.</p>
+                    <a href="logingym.html" class="cta-btn">Join Us Today</a>
+                </div>
+                <div class="image">
+                    <img src="https://i.pinimg.com/originals/f5/61/d7/f561d7b863ff4a1c50afe5b173c9ec7c.jpg"
+                        alt="Gym Interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial-cards">
+                <div class="card">
+                    <p>"This gym transformed my fitness journey. The trainers are awesome and so motivating!"</p>
+                    <span>- Sarah M.</span>
+                </div>
+                <div class="card">
+                    <p>"Love the vibe here! The equipment is top-notch, and the community feels like family."</p>
+                    <span>- John D.</span>
+                </div>
+                <div class="card">
+                    <p>"I've seen amazing results in just a few months. Highly recommend this gym to anyone."</p>
+                    <span>- Emily R.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Gym Website. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

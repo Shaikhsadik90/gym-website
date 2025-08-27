@@ -1,0 +1,332 @@
+/* Basic Reset */
+
+
+/* General Body Styling (Light Mode by default) */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e8e2e2; /* Light background for light mode */
+    color: #131111; /* Dark text color for light mode */
+    line-height: 1.6;
+    transition: all 0.3s ease; /* Smooth transition for switching modes */
+}
+
+/* Light Mode Styling */
+body:not(.dark-mode) {
+    background-color: #252323;
+    color: #333;
+}
+
+h1, h2, h3, p {
+    transition: color 0.3s ease;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333; /* Dark color for headings in light mode */
+}
+
+p {
+    font-size: 18px;
+    color: #696767; /* Lighter text color for paragraphs in light mode */
+}
+
+/* Dark Mode Styling (When .dark-mode is applied) */
+body.dark-mode {
+    background-color: #121212; /* Dark background for dark mode */
+    color: #e4e4e4; /* Lighter text color for dark mode */
+}
+
+body.dark-mode h1 {
+    color: #e4e4e4; /* Light text color for headings in dark mode */
+}
+
+body.dark-mode p {
+    color: #bbb; /* Lighter text color for paragraphs in dark mode */
+}
+
+body.dark-mode a {
+    color: #9b3993; /* Color for links in dark mode */
+}
+
+/* Add more styling for links, buttons, etc., in dark mode */
+body.dark-mode nav {
+    background-color: #090909; /* Dark background for navbar */
+}
+
+body.dark-mode nav ul li a {
+    color: #f4f4f4; /* Light text color for nav links in dark mode */
+}
+
+body.dark-mode nav ul li a:hover {
+    background-color: #9b3993;
+}
+
+/* Other specific styles as needed (team, footer, etc.) can go here */
+
+/* Basic Styles */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;  /* Light mode background */
+    color: black;             /* Default text color */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #333;
+    padding: 10px;
+    text-align: right;
+}
+
+#darkModeToggle {
+    background: none;
+    color: white;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+#darkModeToggle:hover {
+    background-color: #555;
+}
+
+.content {
+    padding: 20px;
+}
+
+/* Dark Mode: Changes background color to black */
+body.dark-mode {
+    background-color: black;   /* Dark mode background */
+}
+
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo a {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff6347;
+}
+/*
+
+#darkModeToggle {
+    background: none;
+    color: white;
+    border: 1px solid #fff;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#darkModeToggle:hover {
+    background-color: #ff6347;
+}
+
+/* Hero Section */
+.hero {
+   /* background-image: url('https://t3.ftcdn.net/jpg/06/06/54/92/360_F_606549277_BMzgu4QoNfqHDkmUgngJrFHuxZXvkS7d.jpg');*/
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.hero .btn-primary {
+    background-color: #ff6347;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.hero .btn-primary:hover {
+    background-color: #e55347;
+}
+
+/* Services Section */
+.services {
+    background-color: #fff;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.service-card {
+    background-color: #fff;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+}
+
+.service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.service-card h3 {
+    font-size: 1.8rem;
+    margin: 1rem 0;
+}
+
+.service-card p {
+    font-size: 1.1rem;
+    color: #777;
+    margin-bottom: 1rem;
+}
+
+.learn-more {
+    background-color: #ff6347;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.learn-more:hover {
+    background-color: #e55347;
+}
+
+.details {
+    display: none;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    margin-top: 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Contact Section */
+.contact {
+    background-color: #fff;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact input,
+.contact textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact button {
+    padding: 12px;
+    font-size: 1.2rem;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact button:hover {
+    background-color: #e55347;
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}

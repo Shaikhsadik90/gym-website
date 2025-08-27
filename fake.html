@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Transfer Payment</title>
+    <link rel="icon" href="gym.jpeg" type="image/x-icon">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        button {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            transition: all 0.3s ease;
+            margin: 10px 0;
+            /* Adds margin to separate buttons */
+        }
+
+        /* Payment button style */
+        .payment-button {
+            background-color: #007bff;
+            /* Blue background for payment button */
+            color: white;
+        }
+
+        .payment-button i {
+            margin-right: 8px;
+        }
+
+        .payment-button:hover {
+            background-color: #0056b3;
+            /* Darker blue on hover */
+        }
+
+        .payment-button:active {
+            transform: scale(0.98);
+            /* Slight button press effect */
+        }
+
+        /* Home button style */
+        .home-button {
+            text-decoration: none;
+            /* Removes the underline from the link */
+        }
+
+        .home-btn {
+            background-color: #28a745;
+            /* Green background for home button */
+            color: white;
+        }
+
+        .home-btn i {
+            margin-right: 8px;
+        }
+
+        .home-btn:hover {
+            background-color: #02310d;
+            /* Darker green on hover */
+            font-size: 19px;
+        }
+
+        .home-btn:active {
+            transform: scale(0.98);
+            /* Slight button press effect */
+        }
+
+        /* Optional: If you want the buttons aligned next to each other */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            /* Adds space between the buttons */
+        }
+
+
+
+
+
+
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .payment-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .payment-card {
+            background: #fff;
+            padding: 30px;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .payment-card:hover {
+            transform: translateY(-10px);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .payment-method {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .payment-method:hover {
+            background-color: #f7f7f7;
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .payment-method i {
+            font-size: 30px;
+            color: #333;
+        }
+
+        .payment-method span {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .payment-amount {
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .payment-amount input {
+            padding: 8px 12px;
+            font-size: 16px;
+            width: 80%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: right;
+        }
+
+        .payment-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .payment-button:hover {
+            background-color: #45a049;
+        }
+
+        .payment-button:active {
+            transform: scale(0.98);
+        }
+
+        .payment-button i {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="payment-container">
+        <div class="payment-card">
+            <h2>Bank Transfer Payment</h2>
+
+            <!-- Bank Transfer Method -->
+            <div class="payment-method">
+                <i class="fas fa-university"></i>
+                <span>Bank Transfer</span>
+            </div>
+
+            <!-- Payment Amount Section -->
+            <div class="payment-amount">
+                <span>Amount: $</span>
+                <input type="number" id="amountInput" value="150" onchange="updateAmount()" />
+            </div>
+
+            <!-- Payment Button -->
+            <button class="payment-button" id="paymentBtn" onclick="redirectToPaymentPage()">
+                <i class="fas fa-arrow-right"></i> Proceed with Payment
+            </button>
+
+            <a href="payment.html" class="home-button">
+                <button class="home-btn">
+                    <i class="fas fa-home"></i> Go to Home
+                </button>
+            </a>
+
+        </div>
+    </div>
+
+
+    <script>
+        function redirectToPaymentPage() {
+            window.location.href = "tnkgym.html";
+        }
+        // Function to update the displayed amount
+        function updateAmount() {
+            var amount = document.getElementById('amountInput').value;
+            document.querySelector('.payment-amount span').textContent = 'Amount: $' + amount;
+        }
+    </script>
+
+</body>
+
+</html>
